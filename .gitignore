@@ -8,6 +8,7 @@ yarn-error.log*
 pnpm-debug.log*
 yarn.lock
 # package-lock.json
+.flox/
 
 # Runtime data
 pids
