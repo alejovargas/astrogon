@@ -9,14 +9,18 @@ import remarkToc from "remark-toc";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://janedoe.com",
+  site: "https://www.tagragg.com",
   base: "/",
   trailingSlash: "ignore",
+
   prefetch: {
     prefetchAll: true
   },
+
   integrations: [react(), sitemap(), tailwind({
     config: {
       applyBaseStyles: false
@@ -24,6 +28,7 @@ export default defineConfig({
   }), AutoImport({
     imports: ["@components/common/Button.astro", "@shortcodes/Accordion", "@shortcodes/Notice", "@shortcodes/Youtube", "@shortcodes/Tabs", "@shortcodes/Tab"]
   }), mdx()],
+
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, {
       test: "Table of contents"
@@ -37,4 +42,6 @@ export default defineConfig({
     },
     extendDefaultPlugins: true
   },
+
+  adapter: cloudflare(),
 });
