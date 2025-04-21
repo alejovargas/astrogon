@@ -1,8 +1,15 @@
 ---
-title: Hey, I'm Jane Doe!
-description: this is meta description
-image: "@assets/profile/jane-doe.jpg"
+title: About the Company
+description: Tagragg Productions is a theater company focused on high quality, innovative productions serving communities in northern Virginia.
+image: "@assets/profile/erin-coulter.jpg"
+imageAlt: "Erin Coulter"
 draft: false
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis illum nesciunt commodi vel nisi ut alias excepturi ipsum, totam, labore tempora, odit ex iste tempore sed. Fugit voluptatibus perspiciatis assumenda nulla ad nihil, omnis vel, doloremque sit quam autem optio maiores, illum eius facilis et quo consectetur provident dolor similique! Enim voluptatem dicta expedita veritatis repellat dolorum impedit, provident quasi at.
+Tagragg Productions is a theater company focused on high quality, innovative productions serving communities in northern Virginia. Tagragg is an inclusive, imaginative company creating theater in traditional and non-traditional ways. The company was conceived pre-pandemic and founded during the COVID-19 pandemic. With flexibility and creativity at the center of our mission, Tagragg began with online readings and a talent development focus with our Actor’s Playground workshops.
+
+## About the Tagraggery
+
+### Founder and Artistic Director - Erin Coulter
+
+Erin Coulter is a theater director, producer, and educator based in Middleburg Virginia. With diverse and wide-ranging training in acting, singing, dancing, directing, and educating, Erin is known as an "actor's director." She believes in theater as a catalyst for change and connection; that through investigating, performing and ingesting stories, individuals and humanity can evolve. Learn more about her work and previous productions at [LinkedIn](https://www.linkedin.com/in/erin-coulter-89b4825).

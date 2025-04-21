@@ -1,9 +1,10 @@
 ---
-image: "@assets/astrogon-star.svg"
-imageAlt: Astrogon logo
-title: Astrogon
-content: A rapidly-customizable template for a blog, documentation, and more.
+image: "@assets/tagragg-icon.svg"
+imageAlt: Tagragg logo icon
+title: "Fools and Mortals:"
+subtitle: "A Midsummer Adventure"
+content: Audition Notice - In person auditions May 18th
 button:
-  label: See the Code
+  label: Click here for more information
   link: https://github.com/astrogon/astrogon
 ---

@@ -67,6 +67,116 @@ module.exports = {
           border: "#444",
         },
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.txt.p"),
+            a: {
+              color: "#3182ce",
+              "&:hover": {
+                color: "#2c5282",
+              },
+            },
+            h1: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            h2: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            h3: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            h4: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            h5: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            h6: {
+              color: theme("colors.txt.p"),
+              fontFamily: theme("fontFamily.primary").join(", "),
+            },
+            strong: {
+              color: theme("colors.txt.p"),
+            },
+            blockquote: {
+              color: theme("colors.txt.s"),
+              borderLeftColor: theme("colors.border"),
+            },
+            code: {
+              color: theme("colors.txt.p"),
+            },
+            pre: {
+              backgroundColor: theme("colors.bg.s"),
+            },
+            thead: {
+              color: theme("colors.txt.p"),
+              borderBottomColor: theme("colors.border"),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme("colors.border"),
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme("colors.darkmode.txt.p"),
+            a: {
+              color: "#63b3ed",
+              "&:hover": {
+                color: "#90cdf4",
+              },
+            },
+            h1: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            h2: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            h3: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            h4: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            h5: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            h6: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            strong: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            blockquote: {
+              color: theme("colors.darkmode.txt.s"),
+              borderLeftColor: theme("colors.darkmode.border"),
+            },
+            code: {
+              color: theme("colors.darkmode.txt.p"),
+            },
+            pre: {
+              backgroundColor: theme("colors.darkmode.bg.s"),
+            },
+            thead: {
+              color: theme("colors.darkmode.txt.p"),
+              borderBottomColor: theme("colors.darkmode.border"),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme("colors.darkmode.border"),
+              },
+            },
+          },
+        },
+      }),
       minHeight: {
         static_sidemenu: "calc(100vh - 6rem)",
       },

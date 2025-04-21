@@ -1,16 +1,16 @@
 ---
-import BaseLayout from "@components/base/BaseLayout.astro";
-import { markdownify } from "@lib/textConverter";
-import Button from "@components/common/Button.astro";
-import type { HomeEntry } from "@/types";
-import { Image } from "astro:assets";
+import BaseLayout from "@components/base/BaseLayout.astro"
+import { markdownify } from "@lib/textConverter"
+import Button from "@components/common/Button.astro"
+import type { HomeEntry } from "@/types"
+import { Image } from "astro:assets"
 
 interface Props {
-  entry: HomeEntry;
+  entry: HomeEntry
 }
 
-const { entry } = Astro.props;
-const { image, imageAlt, title, content, button } = entry.data;
+const { entry } = Astro.props
+const { image, imageAlt, title, subtitle, content, button } = entry.data
 ---
 
 <BaseLayout>
@@ -23,19 +23,19 @@ const { image, imageAlt, title, content, button } = entry.data;
             image && (
               <div class="blur-[0px]">
                 <Image
-                class="mb-6 w-64"
-                src={image}
-                alt={imageAlt}
-                width={1024}
-                height={1024}
-                loading="eager"
-              />
+                  class="mb-6 w-32"
+                  src={image}
+                  alt={imageAlt}
+                  width={1024}
+                  height={1024}
+                  loading="eager"
+                />
               </div>
-              
             )
           }
-          <h1 set:html={markdownify(title)} class="mb-4" />
-          <p set:html={markdownify(content)} class="mb-8" />
+          <h1 set:html={markdownify(title)} class="mb-0" />
+          <h3 set:html={markdownify(subtitle)} class="mb-8" />
+          <div set:html={markdownify(content)} class="tsext-2xl mb-8" />
           {
             button && (
               <Button
