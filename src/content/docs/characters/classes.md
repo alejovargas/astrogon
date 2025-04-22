@@ -5,6 +5,7 @@ image: "@assets/docs/characters/classes/cover.jpg"
 imageAlt: "A painting of an Elvish Rogue in a tree"
 pubDate: 2024-03-10
 modDate: 2024-05-18
+draft: true
 ---
 
 Classes define an adventurer’s role in the realms, shaping their abilities, combat style, and place within a party. From spell-slinging mages to stalwart defenders, each class offers a unique path to greatness.

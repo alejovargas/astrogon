@@ -5,6 +5,7 @@ image: "@assets/docs/the-arcane/mage-schools/cover.jpg"
 imageAlt: Painting of a woman summoning earthen hands on a battlefield
 pubDate: 2024-07-15
 modDate: 2024-09-10
+draft: true
 ---
 
 Throughout the realms, magic is studied and practiced in structured institutions known as Mage Schools. Each school specializes in a specific aspect of magic, offering unique skills and philosophies to its students.

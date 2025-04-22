@@ -16,3 +16,11 @@
 @layer utilities {
   @include meta.load-css("utilities");
 }
+
+.theme-aware {
+  filter: invert(1) brightness(1) contrast(1.2);
+}
+
+.dark .theme-aware {
+  filter: invert(0);
+}

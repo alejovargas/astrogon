@@ -18,29 +18,72 @@ export default defineConfig({
   trailingSlash: "ignore",
 
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
   },
 
-  integrations: [react(), sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), AutoImport({
-    imports: ["@components/common/Button.astro", "@shortcodes/Accordion", "@shortcodes/Notice", "@shortcodes/Youtube", "@shortcodes/Tabs", "@shortcodes/Tab"]
-  }), mdx()],
+  integrations: [
+    react(),
+    sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    AutoImport({
+      imports: [
+        "@components/common/Button.astro",
+        "@shortcodes/Accordion",
+        "@shortcodes/Notice",
+        "@shortcodes/Youtube",
+        "@shortcodes/Tabs",
+        "@shortcodes/Tab",
+      ],
+    }),
+    mdx(),
+  ],
+
+  build: {
+    // Control how 404 pages are handled
+    trailingSlash: "never",
+    // Only include routes for active navigation items
+    excludePages: [
+      "/docs/**",
+      "/docs.html",
+      "/blog/**",
+      "/recipes/**",
+      "/poetry/**",
+      "/index-cards/**",
+      "index-cards.html",
+      "/authors/**",
+      "/authors.html",
+      "/portfolio/**",
+    ],
+    // Control static file copying
+    assets: "assets",
+    // Format of page URLs
+    format: "file",
+  },
 
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, {
-      test: "Table of contents"
-    }], remarkMath],
+    remarkPlugins: [
+      remarkToc,
+      [
+        remarkCollapse,
+        {
+          test: "Table of contents",
+        },
+      ],
+      remarkMath,
+    ],
     rehypePlugins: [[rehypeKatex, {}]],
     shikiConfig: {
-      themes: { // https://shiki.style/themes
+      themes: {
+        // https://shiki.style/themes
         light: "light-plus",
         dark: "dark-plus",
-      } 
+      },
     },
-    extendDefaultPlugins: true
+    extendDefaultPlugins: true,
   },
 
   adapter: cloudflare(),

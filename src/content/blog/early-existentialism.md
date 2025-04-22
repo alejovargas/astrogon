@@ -6,6 +6,7 @@ categories: [Philosophy]
 author: john-doe
 tags: [existentialism]
 hideToc: true
+draft: true
 ---
 
 Existentialism, as a philosophical movement, focuses on individual freedom, meaning, and the human condition. Its roots lie in the 19th century, shaped by the provocative ideas of Søren Kierkegaard and Friedrich Nietzsche, who challenged traditional beliefs and laid the groundwork for modern existential thought.
@@ -21,7 +22,8 @@ For Kierkegaard, faith was not a matter of certainty but of courageous commitmen
 - Rationality provides no guarantees about life’s ultimate meaning.
 - Embracing faith is an act of personal responsibility and freedom.
 
-As he wrote in *Fear and Trembling*:  
+As he wrote in _Fear and Trembling_:
+
 > To have faith is precisely to lose one’s mind so as to win God.
 
 ### The Three Stages of Life
@@ -43,7 +45,8 @@ Nietzsche famously declared that "God is dead," not as a literal statement but a
 - Without a divine framework, we must create our own values.
 - This task demands courage and the embrace of uncertainty.
 
-In *Thus Spoke Zarathustra*, Nietzsche writes:  
+In _Thus Spoke Zarathustra_, Nietzsche writes:
+
 > Man is something that shall be overcome. What have you done to overcome him?
 
 ### The Will to Power
@@ -55,11 +58,11 @@ At the heart of Nietzsche’s philosophy is the **will to power**, a concept tha
 
 ## Kierkegaard and Nietzsche in Contrast
 
-| Theme                | Kierkegaard                            | Nietzsche                               |
-|-----------------------|----------------------------------------|-----------------------------------------|
-| **Focus**            | Faith and personal relationship with God | Individual power and self-overcoming    |
-| **View of Truth**    | Subjective, grounded in personal faith | Created through individual will         |
-| **Key Metaphor**     | The leap of faith                     | The Übermensch (Overman)                |
+| Theme             | Kierkegaard                              | Nietzsche                            |
+| ----------------- | ---------------------------------------- | ------------------------------------ |
+| **Focus**         | Faith and personal relationship with God | Individual power and self-overcoming |
+| **View of Truth** | Subjective, grounded in personal faith   | Created through individual will      |
+| **Key Metaphor**  | The leap of faith                        | The Übermensch (Overman)             |
 
 While their approaches differ, both philosophers highlight the need for personal engagement with life’s ultimate questions.
 
@@ -69,7 +72,7 @@ Early existentialism remains influential because it speaks to timeless human str
 
 ### Further Reading
 
-- *Fear and Trembling* by Søren Kierkegaard
-- *The Sickness Unto Death* by Søren Kierkegaard
-- *Thus Spoke Zarathustra* by Friedrich Nietzsche
-- *Beyond Good and Evil* by Friedrich Nietzsche
+- _Fear and Trembling_ by Søren Kierkegaard
+- _The Sickness Unto Death_ by Søren Kierkegaard
+- _Thus Spoke Zarathustra_ by Friedrich Nietzsche
+- _Beyond Good and Evil_ by Friedrich Nietzsche

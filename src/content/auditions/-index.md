@@ -1,6 +1,8 @@
 ---
 title: Audition Information
 description: "We are thrilled that you are interested in auditioning for Fools and Mortals: A Midsummer Adventure. We are looking for 16-20 actors aged 16+ to fill roles and swing roles (with guaranteed performances.)"
+image: "@assets/fools-and-mortals.svg"
+imageAlt: "Fools & Mortals Logo"
 draft: false
 ---
 

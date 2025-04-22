@@ -5,6 +5,7 @@ image: "@assets/docs/characters/races/cover.jpg"
 imageAlt: "A painting of a dwarf wielding an axe"
 pubDate: 2024-05-12
 modDate: 2024-06-01
+draft: true
 ---
 
 The realms are home to a wide array of races, each with their own distinct cultures, strengths, and quirks. From the towering heights of the mountain peaks to the shadowy depths of the underworld, the diversity of life is boundless.

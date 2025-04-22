@@ -6,6 +6,7 @@ categories: [Philosophy]
 author: john-doe
 tags: [ancient, stoicism]
 hideToc: true
+draft: true
 ---
 
 Stoicism, an ancient Greek and Roman philosophy, teaches us how to live a meaningful life by mastering our inner world. Developed by thinkers like **Zeno of Citium**, **Epictetus**, **Seneca**, and **Marcus Aurelius**, it emphasizes reason, resilience, and virtue as the keys to flourishing.
@@ -58,11 +59,11 @@ Imagine losing the things you hold dear—not to dwell in fear, but to cultivate
 
 ## Stoic Insights in Action
 
-| Stoic Thinker      | Famous Idea                                   | Modern Application                         |
-|---------------------|-----------------------------------------------|--------------------------------------------|
-| **Epictetus**       | Focus on what is within your control          | Let go of stress over external events.     |
-| **Seneca**          | Life is short; use time wisely                | Prioritize meaningful activities.          |
-| **Marcus Aurelius** | The obstacle is the way                      | View challenges as opportunities to grow.  |
+| Stoic Thinker       | Famous Idea                          | Modern Application                        |
+| ------------------- | ------------------------------------ | ----------------------------------------- |
+| **Epictetus**       | Focus on what is within your control | Let go of stress over external events.    |
+| **Seneca**          | Life is short; use time wisely       | Prioritize meaningful activities.         |
+| **Marcus Aurelius** | The obstacle is the way              | View challenges as opportunities to grow. |
 
 ## Why Stoicism Endures
 

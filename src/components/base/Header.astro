@@ -1,11 +1,15 @@
 ---
 import ThemeSwitcher from "@components/base/ThemeSwitcher.astro"
 import { IoSearch } from "react-icons/io5"
+import { Image } from "astro:assets"
+import Logo from "@assets/tagragg-icon.svg"
 
 const { pathname } = Astro.url
 
 const stickyHeader = true
 
+const image = Logo
+const imageAlt = "Fools & Mortals Logo"
 const menu = [
   {
     name: "Home",
@@ -55,11 +59,25 @@ const menu = [
   class={`container glass py-2 z-30 mb-4 lg:mt-4 lg:rounded-lg ${stickyHeader && "sticky top-0"}`}
 >
   <nav class="relative flex flex-wrap items-center justify-between">
+    {
+      image && (
+        <a class="blur-[0px] order-0" href="/">
+          <Image
+            class="max-w-[50px] theme-aware"
+            src={image}
+            alt={imageAlt}
+            width={1024}
+            height={1024}
+            loading="eager"
+          />
+        </a>
+      )
+    }
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
       for="nav-toggle"
-      class="order-0 cursor-pointer flex items-center md:hidden text-txt-p dark:text-darkmode-txt-p lg:order-1"
+      class="order-1 cursor-pointer flex items-center md:hidden text-txt-p dark:text-darkmode-txt-p lg:order-1 w-11"
     >
       <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
         <title>Menu Open</title>
@@ -93,7 +111,7 @@ const menu = [
         ))
       }
     </ul>
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+    <div class="order-2 flex items-center md:order-2 lg:ml-0">
       <!-- <a
         class="mr-4 inline-block border-border text-xl text-txt-p dark:border-darkmode-border dark:text-darkmode-txt-p"
         href="/search"

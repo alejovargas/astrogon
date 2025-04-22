@@ -5,6 +5,7 @@ image: "@assets/docs/characters/backgrounds/cover.jpg"
 imageAlt: "Painting of a hooded figure with light beaming out from his chest"
 pubDate: 2024-07-15
 modDate: 2024-08-03
+draft: true
 ---
 
 Every adventurer has a story, a life led before they set out on their journey. Backgrounds provide skills, tools, and roleplay opportunities that reflect where characters come from and what drives them.

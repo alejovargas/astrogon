@@ -7,6 +7,7 @@ imageAlt: Profile of Kurt Godel
 categories: [Mathematics]
 author: jane-doe
 tags: [biography, logic]
+draft: true
 ---
 
 In the realm of mathematical logic, few figures are as transformative as **Kurt Gödel** (1906–1978). His groundbreaking **incompleteness theorems** altered the way mathematicians and philosophers think about the foundations of mathematics. Yet, Gödel’s story is as enigmatic as his theorems, blending brilliance with fragility.
@@ -15,7 +16,7 @@ In the realm of mathematical logic, few figures are as transformative as **Kurt 
 
 Kurt Gödel was born in Brünn (now Brno, Czech Republic), then part of the Austro-Hungarian Empire. From a young age, Gödel displayed an intense curiosity:
 
-- By age 6, he earned the nickname *“Herr Warum”* ("Mr. Why") for his relentless questioning.
+- By age 6, he earned the nickname _“Herr Warum”_ ("Mr. Why") for his relentless questioning.
 - He excelled in mathematics and philosophy, eventually enrolling at the **University of Vienna** in 1924.
 
 ### The Vienna Circle
@@ -29,6 +30,7 @@ In 1931, Gödel published his **incompleteness theorems**, which sent shockwaves
 ### The First Incompleteness Theorem
 
 Gödel’s first theorem states:
+
 > Any consistent formal system capable of expressing basic arithmetic contains true statements that cannot be proven within the system itself.
 
 In other words:
@@ -39,6 +41,7 @@ In other words:
 ### The Second Incompleteness Theorem
 
 Gödel’s second theorem builds on the first:
+
 > No formal system can prove its own consistency.
 
 This result dismantled the dream of finding a complete and consistent set of axioms for all of mathematics—a goal famously pursued by David Hilbert.
@@ -54,6 +57,7 @@ Gödel achieved these results through a technique now called **Gödel numbering*
 In 1940, Gödel emigrated to the United States to escape the turmoil of World War II. He joined the **Institute for Advanced Study** in Princeton, where he befriended **Albert Einstein**. The two would often take long walks together, discussing time, space, and philosophy.
 
 Einstein reportedly remarked:
+
 > "My own work no longer means much. I come to the Institute merely to have the privilege of walking home with Gödel."
 
 ### Health and Paranoia
@@ -71,11 +75,11 @@ Kurt Gödel’s work has profound implications for mathematics, computer science
 
 ### Gödel’s Influence in Numbers
 
-| Field                 | Contribution                                   | Impact                                    |
-|-----------------------|-----------------------------------------------|------------------------------------------|
-| **Mathematics**       | Incompleteness theorems                       | Shattered the dream of a complete system |
-| **Philosophy**        | Challenged foundational assumptions           | Influences debates on truth and reality  |
-| **Computer Science**  | Early foundations for algorithmic theory      | Inspired Turing’s work on computation    |
+| Field                | Contribution                             | Impact                                   |
+| -------------------- | ---------------------------------------- | ---------------------------------------- |
+| **Mathematics**      | Incompleteness theorems                  | Shattered the dream of a complete system |
+| **Philosophy**       | Challenged foundational assumptions      | Influences debates on truth and reality  |
+| **Computer Science** | Early foundations for algorithmic theory | Inspired Turing’s work on computation    |
 
 ## Why Gödel Matters
 
@@ -83,5 +87,5 @@ Gödel’s work reminds us of the beauty and limits of human understanding. In a
 
 ### Further Reading
 
-- *Logical Dilemmas: The Life and Work of Kurt Gödel* by John Dawson
-- *The Emperor's New Mind* by Roger Penrose
+- _Logical Dilemmas: The Life and Work of Kurt Gödel_ by John Dawson
+- _The Emperor's New Mind_ by Roger Penrose

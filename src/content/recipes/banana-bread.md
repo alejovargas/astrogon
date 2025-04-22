@@ -7,6 +7,7 @@ prepTime: 15
 cook_time: 60
 servings: 8
 diet: Vegetarian
+draft: true
 
 ingredients:
   list:

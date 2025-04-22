@@ -2,6 +2,7 @@
 title: Freedom's Cost
 author: john-doe
 date: 2024-10-10
+draft: true
 ---
 
 Walls that hold our fear,  

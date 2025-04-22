@@ -5,6 +5,7 @@ image: "@assets/recipes/spaghetti-carbonara.jpg"
 author: john-doe
 prepTime: 30
 servings: 4
+draft: true
 
 ingredients:
   list:

@@ -5,6 +5,7 @@ image: "@assets/docs/the-arcane/forbidden-arts/cover.jpg"
 imageAlt: Painting of a person standing before a large demonic ghost
 pubDate: 2024-02-20
 modDate: 2024-03-05
+draft: true
 ---
 
 The forbidden arts are shrouded in mystery and fear, often whispered about in hushed tones. Those who study these disciplines walk a precarious line between power and ruin. Proceed with caution, for the price of mastery is steep.

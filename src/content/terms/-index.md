@@ -1,5 +1,6 @@
 ---
 title: Terms & Conditions
+draft: true
 ---
 
 ## Copyright
