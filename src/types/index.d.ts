@@ -4,6 +4,7 @@ import type { MarkdownHeading } from "astro";
 export type GenericEntry = CollectionEntry<CollectionKey>;
 
 export type AboutEntry = CollectionEntry<"about">;
+export type AuditionsEntry = CollectionEntry<"auditions">;
 export type AuthorsEntry = CollectionEntry<"authors">;
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
@@ -16,6 +17,7 @@ export type TermsEntry = CollectionEntry<"terms">;
 
 export type SearchableEntry =
   | AboutEntry
+  | AuditionsEntry
   | AuthorsEntry
   | BlogEntry
   | DocsEntry
@@ -35,7 +37,7 @@ export type SocialLinks = {
   tiktok?: string;
   website?: string;
   youtube?: string;
-}
+};
 
 export type EntryReference = {
   id: string;

@@ -33,6 +33,15 @@ const about = defineCollection({
     }),
 });
 
+const auditions = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/auditions" }),
+  schema: ({ image }) =>
+    searchable.extend({
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+    }),
+});
+
 const authors = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
@@ -166,6 +175,7 @@ const terms = defineCollection({
 // Export collections
 export const collections = {
   about,
+  auditions,
   authors,
   blog,
   docs,

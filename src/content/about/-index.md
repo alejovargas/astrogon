@@ -1,8 +1,8 @@
 ---
 title: About the Company
 description: Tagragg Productions is a theater company focused on high quality, innovative productions serving communities in northern Virginia.
-image: "@assets/profile/erin-coulter.jpg"
-imageAlt: "Erin Coulter"
+image: "@assets/tagragg-logo.svg"
+imageAlt: "Tagragg Productions Logo"
 draft: false
 ---
 
