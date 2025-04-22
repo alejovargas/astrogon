@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "postbuild": "pagefind --site dist",
+    "publish": "wrangler pages deploy dist --project-name tagragg --branch=Tagragg-DEV",
     "format": "prettier -w ./src"
   },
   "dependencies": {
