@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-let font_base = 16;
+let font_base = 18;
 let font_scale = 1.25;
 
 let h6 = font_base / font_base;
@@ -12,7 +12,7 @@ let h1 = h2 * font_scale;
 
 let fontPrimary = "serif";
 let fontPrimaryType = "serif";
-let fontSecondary = "open sans";
+let fontSecondary = "Simonetta";
 let fontSecondaryType = "sans-serif";
 
 fontPrimary = fontPrimary
@@ -123,6 +123,7 @@ module.exports = {
                 borderBottomColor: theme("colors.border"),
               },
             },
+            lineHeight: "1.4",
           },
         },
         dark: {
