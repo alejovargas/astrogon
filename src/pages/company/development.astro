@@ -1,0 +1,13 @@
+---
+import { getEntry } from "astro:content"
+import EntryLayout from "@components/company/EntryLayout.astro"
+
+// Use Astro's built-in API
+const entry = await getEntry("company", "development")
+
+if (!entry) {
+  throw new Error(`Content entry not found for 'company/development'`)
+}
+---
+
+<EntryLayout entry={entry} />

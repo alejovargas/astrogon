@@ -1,9 +1,18 @@
 ---
-import type { AuditionsEntry } from "@/types"
-import EntryLayout from "@components/auditions/EntryLayout.astro"
-import { getIndex } from "@lib/contentParser"
-
-const entry = (await getIndex("auditions")) as AuditionsEntry
+// Redirect from /auditions to /company/auditions
 ---
 
-<EntryLayout entry={entry} />
+<meta http-equiv="refresh" content="0;url=/company/auditions" />
+
+<script>
+  window.location.href = "/company/auditions"
+</script>
+
+<body>
+  <h1>Redirecting...</h1>
+  <p>
+    If you are not redirected automatically, <a href="/company/auditions"
+      >click here</a
+    >.
+  </p>
+</body>

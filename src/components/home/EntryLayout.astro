@@ -10,7 +10,20 @@ interface Props {
 }
 
 const { entry } = Astro.props
-const { image, imageAlt, title, subtitle, content, button } = entry.data
+const {
+  image,
+  imageAlt,
+  title,
+  subtitle,
+  content,
+  button,
+  image2,
+  imageAlt2,
+  title2,
+  subtitle2,
+  content2,
+  button2,
+} = entry.data
 ---
 
 <BaseLayout>
@@ -41,6 +54,38 @@ const { image, imageAlt, title, subtitle, content, button } = entry.data
               <Button
                 label={button.label}
                 link={button.link}
+                newtab
+                hoverInvert
+                color=""
+              />
+            )
+          }
+        </div>
+      </div>
+      <div class="row justify-center mt-40">
+        <div class="text-center lg:col-6">
+          {
+            image2 && (
+              <div class="blur-[0px]">
+                <Image
+                  class="mb-6 w-48 theme-aware"
+                  src={image2}
+                  alt={imageAlt2}
+                  width={1024}
+                  height={1024}
+                  loading="eager"
+                />
+              </div>
+            )
+          }
+          <h4 set:html={markdownify(title2)} class="mb-0" />
+          <h5 set:html={markdownify(subtitle2)} class="mb-8" />
+          <h5 set:html={markdownify(content2)} class="tsext-2xl mb-8" />
+          {
+            button2 && (
+              <Button
+                label={button2.label}
+                link={button2.link}
                 newtab
                 hoverInvert
                 color=""

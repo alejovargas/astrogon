@@ -49,6 +49,6 @@ For video submissions, please complete the [audition form](https://docs.google.c
 Sunday, May 18th at 1-2pm
 The Hill School - 130 South Madison, Middleburg VA 20198
 
-Young actors (aged 9-12 years old, should be accompanied by an adult durint he entire audition. Parent or Guardian, please complete the [Fairy audition form for young actors](https://docs.google.com/forms/d/e/1FAIpQLSf-f9h_ukdxYEBLn48tuMnZR88URT6neLWMTCqT2Wgturgr9Q/viewform?usp=sharing).
+Young actors (aged 9-12 years old, should be accompanied by an adult during the entire audition. Parent or Guardian, please complete the [Fairy audition form for young actors](https://docs.google.com/forms/d/e/1FAIpQLSf-f9h_ukdxYEBLn48tuMnZR88URT6neLWMTCqT2Wgturgr9Q/viewform?usp=sharing).
 
 The audition will consist of some improvisation with other children, a short dance piece taught at the audition, and a short reading which will be provided in advance by email.

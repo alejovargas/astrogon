@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-let font_base = 18;
+let font_base = 20;
 let font_scale = 1.25;
 
 let h6 = font_base / font_base;
@@ -72,10 +72,12 @@ module.exports = {
           css: {
             color: theme("colors.txt.p"),
             a: {
-              color: "#3182ce",
+              color: "#1062ce",
               "&:hover": {
-                color: "#2c5282",
+                color: "#000000",
+                textShadow: "0 0 12px rgba(255, 255, 0, 0.6)",
               },
+              textShadow: "0 0 12px rgba(255, 255, 255, 0.6)",
             },
             h1: {
               color: theme("colors.txt.p"),
@@ -124,6 +126,7 @@ module.exports = {
               },
             },
             lineHeight: "1.4",
+            "--tw-prose-bullets": theme("colors.txt.p"),
           },
         },
         dark: {
@@ -175,6 +178,7 @@ module.exports = {
                 borderBottomColor: theme("colors.darkmode.border"),
               },
             },
+            "--tw-prose-bullets": theme("colors.darkmode.txt.p"),
           },
         },
       }),

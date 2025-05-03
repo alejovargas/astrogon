@@ -1,0 +1,25 @@
+---
+// Define the navigation links directly - simpler than querying the collection
+const companyPages = [
+  { slug: "about", title: "About", url: "/company/about" },
+  { slug: "auditions", title: "Auditions", url: "/company/auditions" },
+  { slug: "engage", title: "Engage", url: "/company/engage" },
+  { slug: "development", title: "Development", url: "/company/development" },
+]
+
+const { currentSlug } = Astro.props
+---
+
+<nav class="company-nav">
+  {
+    companyPages.map((page) => (
+      <a href={page.url} class={currentSlug === page.slug ? "active" : ""}>
+        {page.title}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  /* Same styles as before */
+</style>

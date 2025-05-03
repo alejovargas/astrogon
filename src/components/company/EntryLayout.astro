@@ -2,19 +2,29 @@
 import BaseLayout from "@components/base/BaseLayout.astro"
 import { markdownify } from "@lib/textConverter"
 import { Image } from "astro:assets"
-import type { AboutEntry } from "@/types"
+import type { CompanyEntry } from "@/types"
 import { render } from "astro:content"
 
 interface Props {
-  entry: AboutEntry
+  entry: CompanyEntry
 }
 
 const { entry } = Astro.props
+
+// Add validation
+if (!entry) {
+  throw new Error("EntryLayout component received undefined entry")
+}
+
 const { title, description, image, imageAlt } = entry.data
 const { Content } = await render(entry)
 ---
 
-<BaseLayout title={title} description={description} image={image?.src}>
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={image?.src}
+>
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">
@@ -25,7 +35,7 @@ const { Content } = await render(entry)
             {
               image && (
                 <Image
-                  class="mx-auto mb-6 rounded-lg w-70 md:w-96 theme-aware"
+                  class="mx-auto mb-6 rounded-lg w-72 theme-aware"
                   src={image}
                   alt={imageAlt}
                   width={1024}

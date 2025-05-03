@@ -24,21 +24,15 @@ const social = z.object({
   youtube: z.string().optional(),
 });
 
-const about = defineCollection({
-  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/about" }),
+// New unified company collection (replacing separate about and auditions)
+const company = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/company" }),
   schema: ({ image }) =>
     searchable.extend({
+      title: z.string(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-    }),
-});
-
-const auditions = defineCollection({
-  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/auditions" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      image: image().optional(),
-      imageAlt: z.string().default(""),
+      sortOrder: z.number().default(999), // For controlling order in navigation
     }),
 });
 
@@ -94,6 +88,17 @@ const home = defineCollection({
       subtitle: z.string().optional(),
       content: z.string().optional(),
       button: z
+        .object({
+          label: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
+      image2: image().optional(),
+      imageAlt2: z.string().default(""),
+      title2: z.string(),
+      subtitle2: z.string().optional(),
+      content2: z.string().optional(),
+      button2: z
         .object({
           label: z.string(),
           link: z.string().optional(),
@@ -174,8 +179,7 @@ const terms = defineCollection({
 
 // Export collections
 export const collections = {
-  about,
-  auditions,
+  company,
   authors,
   blog,
   docs,

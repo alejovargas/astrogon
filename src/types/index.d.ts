@@ -5,6 +5,7 @@ export type GenericEntry = CollectionEntry<CollectionKey>;
 
 export type AboutEntry = CollectionEntry<"about">;
 export type AuditionsEntry = CollectionEntry<"auditions">;
+export type CompanyEntry = CollectionEntry<"company">;
 export type AuthorsEntry = CollectionEntry<"authors">;
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
@@ -18,6 +19,7 @@ export type TermsEntry = CollectionEntry<"terms">;
 export type SearchableEntry =
   | AboutEntry
   | AuditionsEntry
+  | CompanyEntry
   | AuthorsEntry
   | BlogEntry
   | DocsEntry
