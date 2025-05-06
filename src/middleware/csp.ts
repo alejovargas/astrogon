@@ -6,11 +6,11 @@ export function getCSP() {
     // Script sources
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com",
 
-    // Style sources - allow Google Fonts
-    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com",
+    // Style sources - remove Google Fonts
+    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
 
-    // Font sources - explicitly allow Google Fonts
-    "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:",
+    // Font sources - remove Google Fonts
+    "font-src 'self' data:",
 
     // Image sources
     "img-src 'self' data: blob:",
