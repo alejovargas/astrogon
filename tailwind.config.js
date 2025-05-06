@@ -51,6 +51,7 @@ module.exports = {
           p: "#fff",
           s: "#ddd",
           t: "#ddd",
+          b: "#00ff00",
         },
         border: "#ddd",
         darkmode: {
@@ -63,6 +64,7 @@ module.exports = {
             p: "#222",
             s: "#444",
             t: "#444",
+            b: "#00ff00",
           },
           border: "#444",
         },

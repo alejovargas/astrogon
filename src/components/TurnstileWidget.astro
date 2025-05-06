@@ -1,16 +1,17 @@
 ---
-// No props needed
+// Get the site key from environment variables
+const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY || '0x4AAAAAABaLZZaiNLUM39vK';
 ---
 
 <div id="cf-turnstile-container"></div>
 <input type="hidden" id="cf-turnstile-response" name="cf-turnstile-response" value="">
 
-<script>
+<script define:vars={{ turnstileSiteKey }}>
   // Wait for the document to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
     // Load the Turnstile script
     const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback';
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback';
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
@@ -26,8 +27,11 @@
       // Make sure turnstile is available
       if (window.turnstile) {
         window.turnstile.render('#cf-turnstile-container', {
-          // Use a valid site key - this is a common test key, replace with your actual key
-          sitekey: '0x4AAAAAABaLZZaiNLUM39vK',
+          // Use the site key from environment variables
+          sitekey: turnstileSiteKey,
+          action: 'contact_form',
+          theme: 'light',
+          size: 'normal',
           callback: function(token) {
             document.getElementById('cf-turnstile-response').value = token;
             console.log("Turnstile verification successful");
@@ -38,6 +42,11 @@
           },
           'error-callback': function(error) {
             console.error("Turnstile error:", error);
+          },
+          'expired-callback': function() {
+            // Reset the token when it expires
+            document.getElementById('cf-turnstile-response').value = '';
+            console.log("Turnstile token expired");
           }
         });
       } else {
@@ -51,7 +60,7 @@
 
 <style>
   #cf-turnstile-container {
-    margin: 1.5rem auto;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
   }
