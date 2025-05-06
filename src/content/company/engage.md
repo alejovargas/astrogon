@@ -13,7 +13,7 @@ Thank you for joining our community! There are many ways to get involved:
 - Donate supplies that will help us bring the dream to life, such as building materials, outdoor chairs for the audience, or printing space or services.
 - Become a financial sponsor and help us cover the costs of stipends for actors, building supplies and performance space, just to name a few. For more information about becoming a financial sponsor for our next production, Fools and Mortals,please see the sponsorship levels below.
 
-Reach out to <tagraggproductions@gmail.com> with any questions about getting involved.
+Reach out to <contact@tagragg.com> with any questions about getting involved.
 
 ## <center class="mt-24">Sponsorship levels</center>
 

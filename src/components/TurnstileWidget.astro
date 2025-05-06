@@ -1,0 +1,58 @@
+---
+// No props needed
+---
+
+<div id="cf-turnstile-container"></div>
+<input type="hidden" id="cf-turnstile-response" name="cf-turnstile-response" value="">
+
+<script>
+  // Wait for the document to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load the Turnstile script
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+    
+    // Define the callback function
+    window.onloadTurnstileCallback = function() {
+      renderTurnstile();
+    };
+  });
+
+  function renderTurnstile() {
+    try {
+      // Make sure turnstile is available
+      if (window.turnstile) {
+        window.turnstile.render('#cf-turnstile-container', {
+          // Use a valid site key - this is a common test key, replace with your actual key
+          sitekey: '0x4AAAAAABaLZZaiNLUM39vK',
+          callback: function(token) {
+            document.getElementById('cf-turnstile-response').value = token;
+            console.log("Turnstile verification successful");
+            
+            // Dispatch an event that the React component can listen for
+            const event = new CustomEvent('turnstileVerified', { detail: { token } });
+            document.dispatchEvent(event);
+          },
+          'error-callback': function(error) {
+            console.error("Turnstile error:", error);
+          }
+        });
+      } else {
+        console.error("Turnstile not loaded");
+      }
+    } catch (error) {
+      console.error("Error rendering Turnstile:", error);
+    }
+  }
+</script>
+
+<style>
+  #cf-turnstile-container {
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+  }
+</style>

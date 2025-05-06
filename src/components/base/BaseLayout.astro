@@ -7,6 +7,7 @@ import "@/styles/main.scss"
 import { ClientRouter } from "astro:transitions"
 import Background from "@/components/base/Background.astro"
 import { Tooltips } from "astro-tooltips"
+import { getCSP } from "@/middleware/csp"
 
 // types for frontmatters
 export interface Props {
@@ -25,12 +26,15 @@ const siteDescription =
 const siteImage = "@assets/og-image.png"
 const siteAuthor = "Alejandro Vargas"
 const baseUrl = "https://www.tagragg.com"
+
+// Get CSP
+const csp = getCSP();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- favicon -->
+    <meta http-equiv="Content-Security-Policy" content={csp}>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -51,6 +55,7 @@ const baseUrl = "https://www.tagragg.com"
 
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <meta charset="UTF-8">
     <meta name="theme-name" content="pages" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta
@@ -109,30 +114,11 @@ const baseUrl = "https://www.tagragg.com"
     />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Katex -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
-      integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
-      integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
-      crossorigin="anonymous"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
-      integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
-      crossorigin="anonymous"
-      onload="renderMathInElement(document.body);"></script>
-
     <!-- https://docs.astro.build/en/guides/view-transitions -->
     <ClientRouter fallback="swap" />
     <Tooltips interactive={false} delay={[333, 0]} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap"
       rel="stylesheet"

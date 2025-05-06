@@ -15,6 +15,7 @@
     "paths": {
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
+      "@middleware/*": ["./src/middleware/*"],
       "@helpers/*": ["src/components/helpers/*"],
       "@lib/*": ["src/lib/*"],
       "@shortcodes/*": ["src/components/common/shortcodes/*"],

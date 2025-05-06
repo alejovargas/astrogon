@@ -1,26 +1,22 @@
-import mdx from "@astrojs/mdx";
+import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import AutoImport from "astro-auto-import";
-import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
-
-import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.tagragg.com",
   base: "/",
   trailingSlash: "ignore",
-
   prefetch: {
     prefetchAll: true,
   },
-
   integrations: [
     react(),
     sitemap(),
@@ -41,7 +37,6 @@ export default defineConfig({
     }),
     mdx(),
   ],
-
   build: {
     // Control how 404 pages are handled
     trailingSlash: "never",
@@ -63,7 +58,6 @@ export default defineConfig({
     // Format of page URLs
     format: "file",
   },
-
   markdown: {
     remarkPlugins: [
       remarkToc,
@@ -85,6 +79,13 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
-
-  adapter: cloudflare(),
+  output: "static",
+  headers: {
+    "/*": [
+      {
+        key: "X-Frame-Options",
+        value: "SAMEORIGIN",
+      },
+    ],
+  },
 });
