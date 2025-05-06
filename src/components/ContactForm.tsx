@@ -8,8 +8,7 @@ declare global {
   }
 }
 
-import { useState } from "react";
-import TurnstileReact from "./TurnstileReact.tsx";
+import { useState, useEffect } from "react";
 
 interface FormState {
   name: string;
@@ -39,6 +38,24 @@ const ContactForm = () => {
     success?: boolean;
     message?: string;
   }>({});
+
+  useEffect(() => {
+    const handleTurnstileEvent = (event: CustomEvent) => {
+      handleTurnstileVerify(event.detail.token);
+    };
+
+    document.addEventListener(
+      "turnstileVerified",
+      handleTurnstileEvent as EventListener,
+    );
+
+    return () => {
+      document.removeEventListener(
+        "turnstileVerified",
+        handleTurnstileEvent as EventListener,
+      );
+    };
+  }, []);
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
@@ -293,9 +310,6 @@ const ContactForm = () => {
             autoComplete="off"
           />
         </div>
-
-        {/* Connect to the Turnstile widget */}
-        <TurnstileReact onVerify={handleTurnstileVerify} />
 
         <div>
           <button

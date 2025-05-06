@@ -96,16 +96,20 @@
   font-family: "Simonetta";
   font-style: normal;
   font-weight: 400;
-  src: url("https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+  src:
+    url("/fonts/simonetta/Simonetta-Regular.woff2") format("woff2"),
+    url("/fonts/simonetta/Simonetta-Regular.ttf") format("truetype");
 }
+
 /* Simonetta Black */
 @font-face {
   font-display: block;
   font-family: "Simonetta";
   font-style: normal;
-
   font-weight: 900;
-  src: url("https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+  src:
+    url("/fonts/simonetta/Simonetta-Black.woff2") format("woff2"),
+    url("/fonts/simonetta/Simonetta-Black.ttf") format("truetype");
 }
 
 /* Simonetta Regular Italic */
@@ -114,7 +118,9 @@
   font-family: "Simonetta";
   font-style: italic;
   font-weight: 400;
-  src: url("https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+  src:
+    url("/fonts/simonetta/Simonetta-Italic.woff2") format("woff2"),
+    url("/fonts/simonetta/Simonetta-Italic.ttf") format("truetype");
 }
 
 /* Simonetta Black Italic */
@@ -123,7 +129,9 @@
   font-family: "Simonetta";
   font-style: italic;
   font-weight: 900;
-  src: url("https://fonts.googleapis.com/css2?family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+  src:
+    url("/fonts/simonetta/Simonetta-BlackItalic.woff2") format("woff2"),
+    url("/fonts/simonetta/Simonetta-BlackItalic.ttf") format("truetype");
 }
 
 /* Simonetta utility classes */

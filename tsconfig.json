@@ -23,6 +23,11 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.astro",
+    "src/components/TurnstileReact.tsx.back"
+  ],
   "exclude": ["node_modules"]
 }
