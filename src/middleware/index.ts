@@ -1,18 +1,25 @@
-import { getCSP } from "./csp";
-import type { MiddlewareHandler } from "astro";
+import { getHeaderCSP } from "./csp"; // Ensure this line imports getHeaderCSP
+import type { APIContext, MiddlewareNext } from "astro"; // Updated type imports
 
-export const onRequest: MiddlewareHandler = async (
-  { request, locals, cookies },
-  next,
-) => {
-  // Get the response from the next middleware or page handler
+export async function onRequest(context: APIContext, next: MiddlewareNext) {
+  // Execute the rest of the request pipeline
   const response = await next();
 
-  // Set the main CSP header
-  response.headers.set("Content-Security-Policy", getCSP());
+  // Get the CSP string intended for HTTP headers
+  const csp = getHeaderCSP();
 
-  // Set frame-ancestors as a separate CSP header
-  response.headers.append("Content-Security-Policy", "frame-ancestors 'self'");
+  // Set the Content-Security-Policy header
+  response.headers.set("Content-Security-Policy", csp);
+
+  // It's good practice to also set other security headers here if you're
+  // managing them via middleware. If they are in public/_headers,
+  // this might be redundant for static assets on Cloudflare Pages,
+  // but ensures they are set for any server-handled requests.
+  // Example:
+  // response.headers.set("X-Frame-Options", "SAMEORIGIN");
+  // response.headers.set("X-Content-Type-Options", "nosniff");
+  // response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  // response.headers.set("Permissions-Policy", "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()");
 
   return response;
-};
+}

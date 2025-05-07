@@ -1,14 +1,18 @@
-// src/components/ContactForm.tsx
 declare global {
   interface Window {
     turnstile?: {
       render: (selector: string, options: any) => string;
       reset: (widgetId?: string) => void;
     };
+    onloadTurnstileCallback?: () => void;
+    onTurnstileSuccess?: (token: string) => void;
   }
 }
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+// Get the site key from environment variables
+const turnstileSiteKey = "0x4AAAAAABaLZZaiNLUM39vK";
 
 interface FormState {
   name: string;
@@ -38,33 +42,79 @@ const ContactForm = () => {
     success?: boolean;
     message?: string;
   }>({});
+  const [turnstileLoaded, setTurnstileLoaded] = useState(false);
 
+  // Load Turnstile script and set up callbacks
   useEffect(() => {
-    const handleTurnstileEvent = (event: CustomEvent) => {
-      handleTurnstileVerify(event.detail.token);
+    // Remove any document.domain setting code if it exists
+
+    // Add event listener for cross-domain communication
+    const handleTurnstileMessage = (event: MessageEvent) => {
+      // Only accept messages from Cloudflare domains
+      if (event.origin.endsWith("cloudflare.com")) {
+        try {
+          const data =
+            typeof event.data === "string"
+              ? JSON.parse(event.data)
+              : event.data;
+          if (data && data.type === "turnstile" && data.token) {
+            console.log("Received Turnstile token via postMessage");
+            setFormState((prev) => ({ ...prev, turnstileToken: data.token }));
+          }
+        } catch (error) {
+          console.error("Error processing message:", error);
+        }
+      }
     };
 
-    document.addEventListener(
-      "turnstileVerified",
-      handleTurnstileEvent as EventListener,
-    );
+    window.addEventListener("message", handleTurnstileMessage);
+
+    // Define the Turnstile success callback
+    // This needs to be on the window object for the Turnstile script to find it
+    window.onTurnstileSuccess = (token: string) => {
+      console.log("Turnstile verification successful");
+      setFormState((prev) => ({ ...prev, turnstileToken: token }));
+    };
+
+    // Only load if not already loaded
+    if (!document.querySelector('script[src*="turnstile/v0/api.js"]')) {
+      console.log("Loading Turnstile script");
+      const script = document.createElement("script");
+      script.src =
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback";
+      script.async = true;
+      script.defer = true;
+
+      // Define the onload callback function for the script itself
+      window.onloadTurnstileCallback = function () {
+        console.log("Turnstile script loaded");
+        setTurnstileLoaded(true);
+        // The Turnstile widget will automatically render if the div is present
+        // and call onTurnstileSuccess when verified.
+      };
+
+      document.head.appendChild(script);
+    } else {
+      // If script was already there (e.g., from another component or navigation)
+      setTurnstileLoaded(true);
+      // Ensure Turnstile renders if it hasn't, e.g. if window.turnstile.render is needed
+      // For data-sitekey and data-callback, it should auto-initialize.
+    }
 
     return () => {
-      document.removeEventListener(
-        "turnstileVerified",
-        handleTurnstileEvent as EventListener,
-      );
+      // Cleanup global callbacks when the component unmounts
+      window.removeEventListener("message", handleTurnstileMessage);
+      window.onloadTurnstileCallback = undefined;
+      window.onTurnstileSuccess = undefined;
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs once on mount and cleans up on unmount
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
-    // Check if honeypot field is filled (bot detected)
     if (formState.honeypot.length > 0) {
       console.log("Bot detected: honeypot field filled");
-      // We'll still return true but silently mark this as a bot
-      return true; // Let the form submit but we'll handle it in handleSubmit
+      return true;
     }
 
     if (!formState.name.trim()) {
@@ -91,14 +141,9 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
-  };
-
-  const handleTurnstileVerify = (token: string) => {
-    setFormState((prev) => ({ ...prev, turnstileToken: token }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -108,13 +153,9 @@ const ContactForm = () => {
       return;
     }
 
-    // If honeypot is filled, silently "succeed" without actually sending the form
     if (formState.honeypot.length > 0) {
       console.log("Bot detected, pretending to submit form");
-      // Show success message but don't actually submit
       setIsSubmitting(true);
-
-      // Simulate a delay to make it look real
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitStatus({
@@ -122,29 +163,15 @@ const ContactForm = () => {
           message: "Thank you for your message. We'll be in touch soon!",
         });
       }, 1500);
-
       return;
     }
 
-    // Get the token from the hidden input if it's not in state
-    let token = formState.turnstileToken;
-    if (!token) {
-      const tokenInput = document.getElementById(
-        "cf-turnstile-response",
-      ) as HTMLInputElement;
-
-      if (tokenInput && tokenInput.value) {
-        token = tokenInput.value;
-        setFormState((prev) => ({ ...prev, turnstileToken: token }));
-      } else {
-        console.error("No Turnstile token found");
-        setSubmitStatus({
-          success: false,
-          message:
-            "Please complete the CAPTCHA verification. If issues persist, try refreshing the page.",
-        });
-        return;
-      }
+    if (!formState.turnstileToken) {
+      setSubmitStatus({
+        success: false,
+        message: "Please complete the CAPTCHA verification",
+      });
+      return;
     }
 
     setIsSubmitting(true);
@@ -155,7 +182,7 @@ const ContactForm = () => {
         name: formState.name,
         email: formState.email,
         message: formState.message.substring(0, 20) + "...",
-        turnstileToken: token ? token.substring(0, 10) + "..." : "MISSING",
+        turnstileToken: formState.turnstileToken.substring(0, 10) + "...",
       });
 
       const response = await fetch("/api/contact", {
@@ -167,7 +194,7 @@ const ContactForm = () => {
           name: formState.name,
           email: formState.email,
           message: formState.message,
-          turnstileToken: token,
+          turnstileToken: formState.turnstileToken,
         }),
       });
 
@@ -184,13 +211,9 @@ const ContactForm = () => {
           honeypot: "",
         });
 
-        // Reset Turnstile if possible
+        // Reset Turnstile
         if (window.turnstile) {
-          try {
-            window.turnstile.reset();
-          } catch (error) {
-            console.error("Error resetting Turnstile:", error);
-          }
+          window.turnstile.reset();
         }
 
         setSubmitStatus({
@@ -228,7 +251,7 @@ const ContactForm = () => {
         </div>
       ) : null}
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} className="space-y-3 mt-4">
         <input
           type="text"
           id="name"
@@ -310,11 +333,22 @@ const ContactForm = () => {
             autoComplete="off"
           />
         </div>
+
+        {/* Turnstile widget */}
+        <div className="my-4 flex justify-center">
+          <div
+            className="cf-turnstile"
+            data-sitekey={turnstileSiteKey}
+            data-callback="onTurnstileSuccess"
+            data-theme="light"
+          ></div>
+        </div>
+
         <div>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full glass-b hover:bg-opacity-20 hover:backdrop-blur-none px-4 py-2 rounded-md font-bold intersect:animate-fade opacity-0"
+            className="w-full glass-b hover:bg-opacity-20 hover:backdrop-blur-none px-4 py-2 rounded-md font-bold"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>

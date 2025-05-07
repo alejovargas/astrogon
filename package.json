@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:clean": "rm -rf dist && astro build && node scripts/check-encoding.js",
     "preview": "astro preview",
     "postbuild": "echo 'Skipping Pagefind for SSR deployment'",
     "publish": "wrangler pages deploy dist --project-name tagragg --branch=Tagragg-DEV",

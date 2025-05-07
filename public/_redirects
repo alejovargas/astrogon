@@ -1,0 +1,4 @@
+# Redirect apex domain to www
+
+http://tagragg.com/_ https://www.tagragg.com/:splat 301!
+https://tagragg.com/_ https://www.tagragg.com/:splat 301!

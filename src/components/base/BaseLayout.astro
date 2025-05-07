@@ -7,7 +7,7 @@ import "@/styles/main.scss"
 import { ClientRouter } from "astro:transitions"
 import Background from "@/components/base/Background.astro"
 import { Tooltips } from "astro-tooltips"
-import { getCSP } from "@/middleware/csp"
+import { getMetaTagCSP } from "@/middleware/csp"
 
 // types for frontmatters
 export interface Props {
@@ -27,14 +27,14 @@ const siteImage = "@assets/og-image.png"
 const siteAuthor = "Alejandro Vargas"
 const baseUrl = "https://www.tagragg.com"
 
-// Get CSP
-const csp = getCSP();
+// Get CSP for the meta tag
+const metaCsp = getMetaTagCSP();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Security-Policy" content={csp}>
+    <meta http-equiv="Content-Security-Policy" content={metaCsp}>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -117,7 +117,6 @@ const csp = getCSP();
     <!-- https://docs.astro.build/en/guides/view-transitions -->
     <ClientRouter fallback="swap" />
     <Tooltips interactive={false} delay={[333, 0]} />
-    <meta name="turnstile-site-key" content="0x4AAAAAABaLZZaiNLUM39vK"></meta>
   </head>
   <body>
     <Background />
