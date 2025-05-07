@@ -335,7 +335,7 @@ const ContactForm = () => {
         </div>
 
         {/* Turnstile widget */}
-        <div className="my-4 flex justify-center">
+        <div className="glass rounded-md shadow-sm pt-2 px-3 border border-gray-300 flex justify-center">
           <div
             className="cf-turnstile"
             data-sitekey={turnstileSiteKey}
