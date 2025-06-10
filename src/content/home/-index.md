@@ -1,12 +1,15 @@
 ---
-image: "@assets/fools-and-mortals.svg"
-imageAlt: "Fools & Mortals: A Midsummer Adventure"
-title: "Audition Notice"
-subtitle: "In person auditions May 18th"
-content: ""
+image: ""
+imageAlt: ""
+title: ""
+subtitle: "Calling all performers<br> ages 16–100+! 🎭"
+content: "
+⭐️ Join Taggragg Productions this summer for our weekly improv & acting workshop series. 
+⭐️ Starting 
+"
 button:
-  label: Click here for more information
-  link: /company/auditions
+  label: Got questions? Email us 📨
+  link: /contact
 image2: "@assets/tagragg-logo.svg"
 imageAlt2: "Tagragg Theatre"
 title2: "Supporting the Dream"

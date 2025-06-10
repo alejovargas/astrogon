@@ -48,7 +48,10 @@ const {
           }
           <h1 set:html={markdownify(title)} class="mb-0" />
           <h3 set:html={markdownify(subtitle)} class="mb-8" />
-          <div set:html={markdownify(content)} class="tsext-2xl mb-8" />
+          <h5 set:html={markdownify(content)} class="text-xl my-4" />
+          <h5>Thursday, July 3rd and running weekly:</h5>
+          <h5>5–7 PM: Improv Class ($10 suggested donation)</h5>
+          <h5 class="mb-8">7–8 PM: Optional (and FREE!) Acting Workshop</h5>
           {
             button && (
               <Button
@@ -62,7 +65,7 @@ const {
           }
         </div>
       </div>
-      <div class="row justify-center mt-40">
+      <!-- <div class="row justify-center mt-40">
         <div class="text-center lg:col-6">
           {
             image2 && (
@@ -93,7 +96,7 @@ const {
             )
           }
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </BaseLayout>
