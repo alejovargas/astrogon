@@ -4,7 +4,10 @@ import { markdownify } from "@lib/textConverter"
 import Button from "@components/common/Button.astro"
 import type { HomeEntry } from "@/types"
 import { Image } from "astro:assets"
+import pict from "@assets/improv-art.webp"
 
+const picture = pict
+const pictureAlt = "Improv Art"
 interface Props {
   entry: HomeEntry
 }
@@ -63,6 +66,14 @@ const {
               />
             )
           }
+          <div class="max-w-[360px] mx-auto p-4">
+            <Image
+              class="rounded-md shadow-md shadow-black/50"
+              src={picture}
+              alt={pictureAlt}
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
       <!-- <div class="row justify-center mt-40">
