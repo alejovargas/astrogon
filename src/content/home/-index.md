@@ -4,8 +4,7 @@ imageAlt: ""
 title: ""
 subtitle: "Calling all performers<br> ages 16–100+! 🎭"
 content: "
-⭐️ Join Taggragg Productions this summer for our weekly improv & acting workshop series. 
-⭐️ Starting 
+⭐️ Join Tagragg Productions this summer for our weekly improv & acting workshop series.
 "
 button:
   label: Got questions? Email us 📨
