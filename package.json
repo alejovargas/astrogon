@@ -4,7 +4,7 @@
   "description": "Template.",
   "author": "Alejandro Vargas",
   "license": "MIT",
-  "packageManager": "npm@10.8.2",
+  "packageManager": "npm@11.6.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
