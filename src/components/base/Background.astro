@@ -57,7 +57,7 @@ const stars = Array.from({ length: numStars }).map(() => ({
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     z-index: -1;
     transition: opacity 0.25s ease-in-out;
@@ -78,7 +78,7 @@ const stars = Array.from({ length: numStars }).map(() => ({
     opacity: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 812px) {
     html::before,
     html::after {
       background-image: url(/src/assets/backgrounds/comp-christmas-carol-2.webp);
