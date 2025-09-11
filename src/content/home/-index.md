@@ -2,13 +2,11 @@
 image: ""
 imageAlt: ""
 title: ""
-subtitle: "Calling all performers<br> ages 16–100+! 🎭"
-content: "
-⭐️ Join Tagragg Productions this summer for our weekly improv & acting workshop series.
-"
+subtitle: "⭐️ Audition for<br> A Christmas Carol Project 🎭"
+content: "💡 A New Play by Tara Meddaugh for Middleburg, VA."
 button:
-  label: Got questions? Email us 📨
-  link: /contact
+  label: Sign up here 📥
+  link: "https://docs.google.com/forms/d/e/1FAIpQLSfQviueYoo4flRtf_7Me25xoMB3D6JCyLMikQq6TVys0Qagdw/viewform"
 image2: "@assets/tagragg-logo.svg"
 imageAlt2: "Tagragg Theatre"
 title2: "Supporting the Dream"

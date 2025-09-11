@@ -1,6 +1,8 @@
 <script is:inline data-astro-rerun>
   const defaultTheme = "dark"
 
+  localStorage.setItem("theme", "dark")
+
   function getTheme(defaultTheme) {
     var darkMode = defaultTheme === "dark" ? true : false
     if (localStorage.getItem("theme") === "system") {
@@ -21,7 +23,7 @@
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.remove("dark")
     // Update localStorage
-    localStorage.setItem("theme", darkMode ? "dark" : "light")
+    localStorage.setItem("theme", darkMode ? "dark" : "dark")
   }
 
   // This prevents flickering back to default theme before the page is fully loaded
