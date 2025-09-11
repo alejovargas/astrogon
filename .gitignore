@@ -9,6 +9,7 @@ pnpm-debug.log*
 yarn.lock
 # package-lock.json
 .flox/
+.wrangler/
 
 # Runtime data
 pids
