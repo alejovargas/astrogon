@@ -15,32 +15,11 @@ Thank you for joining our community! There are many ways to get involved:
 
 Reach out to <contact@tagragg.com> with any questions about getting involved.
 
-## <center class="mt-24">Sponsorship levels</center>
+##### <center class="mt-24">Become a Donor</center>
 
-### Puck's Promise - $1500 + donation
+Every little bit helps bring the theatrical magic to life! Consider a tax-deductible financial donation by check, Venmo or Paypal, or if you would like to provide an in-kind donation please send an email to <tagraggproductions@gmail.com>
 
-- A dedicated performance, with a pre-show acknowledgement integrated into the beginning of the show, performed by the actors (option to include the sponsor or their surrogate in that announcement)
-- All benefits of the Shakespeare Lover's Lane sponsorship
-
-### Shakespeare Lover's Lane - $1000 donation
-
-- Four (4) opening night tickets
-- Four (4) drink tickets
-- A bespoke, unique interaction with a performer during the performance for the donor or their surrogate.
-- Thanks and recognition on the Tagragg website and the production's virtual program
-
-### Titania's Tribute - $500 donation
-
-- Two (2) opening night tickets
-- Two (2) drink tickets
-- Thanks and recognition on the Tagragg website and the production's virtual program
-
-### Bottom's Bounty - $250 donation
-
-- Two (2) tickets to a non-opening night performance
-- Thanks and recognition on the Tagragg website and the production's virtual program
-
-## Payment Options
+###### Options
 
 - Send a check payable to "Tagragg Productions" (memo line: "F&M"). Please mail your check to: 3277 Halfway Road, The Plains VA 20198.
 - QR Code Payment: Scan the Paypal or Venmo QR codes below to make a secure payment via your mobile device.
@@ -48,3 +27,9 @@ Reach out to <contact@tagragg.com> with any questions about getting involved.
 <img src="/paypal.webp" alt="PayPal QR Code" class="max-w-[300px]">
 
 <img src="/venmo.webp" alt="Venmo QR Code" class="max-w-[300px]">
+
+<p class="text-xs">
+              Tagragg Productions is a 501c3 nonprofit corporation and all
+              donations are tax deductible. Please include your contact
+              information to receive tax deduction correspondence.
+            </p>

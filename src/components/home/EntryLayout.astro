@@ -31,10 +31,10 @@ const {
 
 <BaseLayout>
   <!-- Banner -->
-  <section class="section">
+  <section class="section" style="padding-top:0">
     <div class="container">
       <div class="row justify-center">
-        <div class="text-center lg:col-6">
+        <section class="text-center lg:col-6">
           {
             image && (
               <div class="blur-[0px]">
@@ -49,18 +49,29 @@ const {
               </div>
             )
           }
-          <h1 set:html={markdownify(title)} class="mb-0" />
-          <h3 set:html={markdownify(subtitle)} class="mb-8" />
-          <h5 set:html={markdownify(content)} class="text-xl my-4" />
-
-          <h5 class="font-normal">
-            <strong>Auditions:</strong> October 1st, 2025
-          </h5>
-          <h5 class="mb-8">6-8pm at The Hill School Sheila Johnson theater</h5>
-          <p class="font-bold">The Hill School in Middleburg</p>
-          <p class="font-normal mb-8">
-            130 South Madison Street, Middleburg, VA
-          </p>
+          <!-- <h2 set:html={markdownify(title)} class="mb-0" /> -->
+          <img
+            src="/Beyond_a_Chritsmas_Carol.webp"
+            alt="Beyond a Chritsmas Carol"
+          />
+          <!-- <h3 set:html={markdownify(subtitle)} class="mb-8" /> -->
+          <h5 set:html={markdownify(content)} class="text-lg mb-4" />
+          <section class="content mb-4 glass px-2 rounded-lg">
+            <p class="font-normal">
+              Three performances on December 13th <br />10am - 12 noon - 2pm
+            </p>
+            <p class="font-normal mb-8">
+              The 45 minute immersive, travelling show begins on South Madison
+              Street in front of Middleburg Books
+            </p>
+            <p>
+              Let us know you are coming by pre-registering at <a
+                href="https://www.eventbrite.com/e/1975881846793?aff=oddtdtcreator"
+                style="color:yellow">Eventbrite</a
+              >. <br /><strong>Free to the public</strong><br />
+              <i>(donations appreciated)</i>
+            </p>
+          </section>
           {
             button && (
               <Button
@@ -72,24 +83,60 @@ const {
               />
             )
           }
-          <p class="my-8 text-left">
-            Auditions will consist of cold readings from the play and group
-            improvisation.
-          </p>
-          <p class="mb-8 text-left">
-            Auditioning actors aged 8 to 108. British accent is a plus. Actors
-            will take part in play development during rehearsals, so experience
-            with new play development or improvisation is helpful.
-          </p>
-          <p class="mb-8 text-left">
-            Rehearsals will be held on Wednesdays from 6-8pm. Actors will not be
-            called for every rehearsal.
-          </p>
-          <p class="text-left">
-            <strong>Performance date:</strong> Multiple performances on December
-            13th
-          </p>
-
+          <h6 class="mt-8 text-left">Beyond a Christmas Carol sponsored by:</h6>
+          <div class="flex flex-wrap gap-2">
+            <img
+              src="/sponsors/Middleburg-Books.svg"
+              alt="Middleburg Books"
+              class="max-w-[260px]"
+            />
+            <img
+              src="/sponsors/4-Lucky-Ducks.svg"
+              alt="4 Lucky Ducks"
+              class="max-w-[260px]"
+            />
+            <img
+              src="/sponsors/Middleburg-Virginia.svg"
+              alt="Middleburg Virginia"
+              class="max-w-[260px]"
+            />
+          </div>
+          <section class="content mb-4 glass px-2 rounded-lg">
+            <h5 class="mt-8">
+              Would you like to support Beyond a Christmas Carol, or a future
+              Tagragg production?
+            </h5>
+            <p class="mt-2 text-left">There are multiple ways to donate:</p>
+            <div class="flex flex-wrap justify-around gap-4">
+              <img
+                src="/paypal.webp"
+                alt="PayPal QR Code"
+                class="max-w-[200px] m-0"
+              />
+              <img
+                src="/venmo.webp"
+                alt="Venmo QR Code"
+                class="max-w-[200px] m-0"
+              />
+            </div>
+            <p>
+              <ul>
+                <li class="my-2 text-left">
+                  Send a check payable to "Tagragg Productions". Please mail
+                  your check to: 3277 Halfway Road, The Plains VA 20198.
+                </li>
+                <li class="my-2 text-left">
+                  QR Code Payment: Scan the Paypal or Venmo QR codes above to
+                  make a secure payment via your mobile device
+                </li>
+              </ul>
+            </p>
+            <p class="text-xs">
+              Tagragg Productions is a 501c3 nonprofit corporation and all
+              donations are tax deductible. Please include your contact
+              information to receive tax deduction correspondence.
+            </p>
+          </section>
           <!-- <div class="max-w-[360px] mx-auto p-4">
             <Image
               class="rounded-md shadow-md shadow-black/50"
@@ -98,7 +145,7 @@ const {
               loading="eager"
             />
           </div> -->
-        </div>
+        </section>
       </div>
       <!-- <div class="row justify-center mt-40">
         <div class="text-center lg:col-6">

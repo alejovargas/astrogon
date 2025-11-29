@@ -1,12 +1,12 @@
 ---
 image: ""
 imageAlt: ""
-title: ""
-subtitle: "⭐️ Audition for<br> A Christmas Carol Project 🎭"
-content: "💡 A New Play by Tara Meddaugh for Middleburg, VA."
+title: "Beyond a Christmas Carol"
+subtitle: ""
+content: "A new, immersive play written by<br>Tara Meddaugh for Middleburg, VA<br>Directed by Erin Coulter"
 button:
-  label: Sign up here 📥
-  link: "https://docs.google.com/forms/d/e/1FAIpQLSfQviueYoo4flRtf_7Me25xoMB3D6JCyLMikQq6TVys0Qagdw/viewform"
+  label: Meet the Cast 🎭
+  link: "Cast"
 image2: "@assets/tagragg-logo.svg"
 imageAlt2: "Tagragg Theatre"
 title2: "Supporting the Dream"
