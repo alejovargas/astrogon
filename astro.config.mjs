@@ -58,6 +58,10 @@ export default defineConfig({
     // Format of page URLs
     format: "file",
   },
+  redirects: {
+    "/eventbrite":
+      "https://www.eventbrite.com/e/1975881846793?aff=oddtdtcreator",
+  },
   markdown: {
     remarkPlugins: [
       remarkToc,

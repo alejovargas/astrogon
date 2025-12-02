@@ -1,0 +1,30 @@
+---
+import type { CastEntry } from "@/types"
+import BaseLayout from "@components/base/BaseLayout.astro"
+import PageHeader from "@components/common/PageHeader.astro"
+import CastCard from "@components/cast/Card.astro"
+
+interface Props {
+  castIndex: CastEntry
+  entries: CastEntry[]
+}
+
+const { castIndex, entries } = Astro.props
+---
+
+<BaseLayout
+  title={castIndex.data.title}
+  subtitle={castIndex.data.subtitle}
+  description={castIndex.data.description}
+>
+  <h1 class="text-center text-3xl intersect:animate-fadeUp opacity-0">
+    {castIndex.data.title}
+  </h1>
+  <section class="section-sm pb-0">
+    <div class="container">
+      <div class="row justify-center">
+        {entries.map((entry) => <CastCard entry={entry} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

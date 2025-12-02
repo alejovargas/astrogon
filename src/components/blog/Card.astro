@@ -1,20 +1,20 @@
 ---
-import type { BlogEntry } from "@/types";
-import { upperHumanize, plainify, slugify } from "@lib/textConverter";
+import type { BlogEntry } from "@/types"
+import { upperHumanize, plainify, slugify } from "@lib/textConverter"
 import {
   FaRegFolder,
   FaRegClock,
   FaHashtag,
   FaRegCalendarAlt,
-} from "react-icons/fa";
-import readingTime from "@lib/readingTime";
-import { formatDate } from "@lib/formatDate";
+} from "react-icons/fa"
+import readingTime from "@lib/readingTime"
+import { formatDate } from "@lib/formatDate"
 
 interface Props {
-  entry: BlogEntry;
+  entry: BlogEntry
 }
 
-const { entry }: Props = Astro.props;
+const { entry }: Props = Astro.props
 const {
   title,
   description,
@@ -23,15 +23,15 @@ const {
   categories,
   tags,
   complexity,
-} = entry.data;
+} = entry.data
 
-const descriptionLength = 200;
+const descriptionLength = 200
 
-const entryDate = date ? formatDate(date) : null;
-const entryReadingTime = readingTime(entry.body!, complexity);
+const entryDate = date ? formatDate(date) : null
+const entryReadingTime = readingTime(entry.body!, complexity)
 const entryDescription =
   description ||
-  (autodescription ? plainify(entry.body!.slice(0, descriptionLength)) : null);
+  (autodescription ? plainify(entry.body!.slice(0, descriptionLength)) : null)
 ---
 
 <div class="h-full m-2 pl-0 bg-gradient-to-br gradient rounded-lg">
@@ -83,7 +83,7 @@ const entryDescription =
         )
       }
     </ul>
-    <p class="">
+    <p class="justify-left">
       {entryDescription}
     </p>
   </div>

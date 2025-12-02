@@ -1,0 +1,43 @@
+---
+import type { CastEntry } from "@/types"
+import { plainify } from "@lib/textConverter"
+import { Image } from "astro:assets"
+import Social from "@components/common/Social.astro"
+
+interface Props {
+  entry: CastEntry
+}
+
+const { entry }: Props = Astro.props
+const { title, subtitle, image, imageAlt, social } = entry.data
+const bodyBrief = entry.body ? plainify(entry.body?.slice(0, 100)) : null
+---
+
+<div class="mb-14 md:col-6 lg:col-4">
+  <div
+    class="glass rounded-lg p-4 text-center intersect:animate-fadeUp opacity-0"
+  >
+    {
+      image && (
+        <a href={`/cast/${entry.id}`}>
+          <Image
+            class="mx-auto mb-6 rounded"
+            src={image}
+            alt={imageAlt}
+            width={120}
+            height={120}
+            loading="eager"
+          />
+        </a>
+      )
+    }
+    <h4>
+      <a href={`/cast/${entry.id}`}>{title}</a>
+    </h4>
+    <h6 class="mb-3">
+      {subtitle}
+    </h6>
+    {bodyBrief && <p class="justify-left mb-4">{bodyBrief}</p>}
+    <!-- <Social links={social} /> -->
+  </div>
+</div>

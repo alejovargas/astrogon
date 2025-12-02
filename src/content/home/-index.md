@@ -6,7 +6,7 @@ subtitle: ""
 content: "A new, immersive play written by<br>Tara Meddaugh for Middleburg, VA<br>Directed by Erin Coulter"
 button:
   label: Meet the Cast 🎭
-  link: "Cast"
+  link: "cast"
 image2: "@assets/tagragg-logo.svg"
 imageAlt2: "Tagragg Theatre"
 title2: "Supporting the Dream"

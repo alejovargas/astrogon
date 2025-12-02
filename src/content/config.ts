@@ -6,6 +6,7 @@ import { glob } from "astro/loaders";
 
 const searchable = z.object({
   title: z.string(),
+  subtitle: z.string().optional(),
   description: z.string().optional(),
   autodescription: z.boolean().default(true),
   draft: z.boolean().default(false),
@@ -38,8 +39,22 @@ const company = defineCollection({
 
 const authors = defineCollection({
   loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
+    pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/authors",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      email: z.string().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default(""),
+      social: social.optional(),
+    }),
+});
+
+const cast = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/cast",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -181,6 +196,7 @@ const terms = defineCollection({
 export const collections = {
   company,
   authors,
+  cast,
   blog,
   docs,
   home,

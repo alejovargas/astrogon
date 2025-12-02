@@ -1,0 +1,12 @@
+---
+import type { CastEntry } from "@/types";
+import CollectionLayout from "@components/cast/CollectionLayout.astro";
+import { getEntries } from "@lib/contentParser";
+import { getIndex } from "@lib/contentParser";
+import { sortByTitle } from "@lib/sortFunctions";
+
+const castIndex = await getIndex("cast") as CastEntry;
+const entries = await getEntries("cast", sortByTitle) as CastEntry[];
+---
+
+<CollectionLayout castIndex={castIndex} entries={entries} />

@@ -7,6 +7,7 @@ export type AboutEntry = CollectionEntry<"about">;
 export type AuditionsEntry = CollectionEntry<"auditions">;
 export type CompanyEntry = CollectionEntry<"company">;
 export type AuthorsEntry = CollectionEntry<"authors">;
+export type CastEntry = CollectionEntry<"cast">;
 export type BlogEntry = CollectionEntry<"blog">;
 export type DocsEntry = CollectionEntry<"docs">;
 export type HomeEntry = CollectionEntry<"home">;
@@ -21,6 +22,7 @@ export type SearchableEntry =
   | AuditionsEntry
   | CompanyEntry
   | AuthorsEntry
+  | CastEntry
   | BlogEntry
   | DocsEntry
   | PoetryEntry

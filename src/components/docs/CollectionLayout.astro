@@ -1,15 +1,15 @@
 ---
-import BaseLayout from "@components/base/BaseLayout.astro";
-import DocCard from "@components/docs/Card.astro";
-import PageHeader from "@components/common/PageHeader.astro";
-import type { DocsEntry } from "@/types";
+import BaseLayout from "@components/base/BaseLayout.astro"
+import DocCard from "@components/docs/Card.astro"
+import PageHeader from "@components/common/PageHeader.astro"
+import type { DocsEntry } from "@/types"
 
 interface Props {
-  collectionIndex: DocsEntry;
-  entries: DocsEntry[]; // this could either be the set of entries in a doc group, or the set of indices of the doc groups
+  collectionIndex: DocsEntry
+  entries: DocsEntry[] // this could either be the set of entries in a doc group, or the set of indices of the doc groups
 }
 
-const { collectionIndex, entries } = Astro.props;
+const { collectionIndex, entries } = Astro.props
 ---
 
 <BaseLayout
