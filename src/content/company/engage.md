@@ -22,19 +22,28 @@ Every little bit helps bring the theatrical magic to life! Consider a tax-deduct
 ###### Options
 
 - Send a check payable to "Tagragg Productions" (memo line: "F&M"). Please mail your check to: 3277 Halfway Road, The Plains VA 20198.
-- QR Code Payment: Scan the Venmo QR code below to make a secure payment via your mobile device.
+- QR Code Payment: Scan the Paypal or Venmo QR code below to make a secure payment via your mobile device.
 
 <div class="flex flex-wrap justify-around gap-4">
               <a
-                href="https://www.paypal.com/qrcodes/venmocs/ad6a5caa-355d-4949-93fc-555d18f8733b?created=1746122326.8949862"
+                href="https://www.paypal.com/paypalme/tagragg"
               >
                 <img
-                  src="/venmo.webp"
-                  alt="Venmo QR Code"
-                  class="max-w-[200px] m-0"
+                  src="/paypal.svg"
+                  alt="Paypal QR Code"
+                  class="w-full max-w-[200px] m-0 rounded-sm"
                 />
               </a>
-            </div>
+              <a
+                href="https://account.venmo.com/u/tagraggproductions"
+              >
+                <img
+                  src="/venmo.svg"
+                  alt="Venmo QR Code"
+                  class="w-full max-w-[200px] m-0 rounded-sm"
+                />
+              </a>
+</div>
 
 <p class="text-xs">
               Tagragg Productions is a 501c3 nonprofit corporation and all

@@ -2,11 +2,13 @@
 title: Camilla White
 subtitle: Martha Cratchit
 email: camilla@tagragg.com
-image: "@assets/profile/jane-doe.jpg"
-description: lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+image: "@assets/profile/camilla-white.jpg"
+description: Camilla is an eighth-grade performer who loves musicals, cozy winter rehearsals, and any excuse to be onstage. She’s grateful to be part of this cast and hopes the show brings you holiday cheer!
 draft: false
 social:
   github: "https://github.com/"
   linkedIn: "https://www.linkedin.com/"
   email: "janesmith@janesmith.com"
 ---
+
+Camilla is an eighth-grade performer who loves musicals, cozy winter rehearsals, and any excuse to be onstage. She’s grateful to be part of this cast and hopes the show brings you holiday cheer!
